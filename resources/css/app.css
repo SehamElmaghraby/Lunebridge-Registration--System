@@ -1,0 +1,36 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for registration page */
+form {
+    max-width: 600px; /* Set form width */
+    margin: auto; /* Center the form */
+}
+
+
+    input {
+        width: 50%; /* Reduce the width to make inputs smaller */
+        margin: 0 auto; /* Center the inputs */
+        padding: 10px; /* Adjust padding for a better look */
+        border: 1px solid #ccc; /* Optional: Add border */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+
+
+button {
+    background-color: #196870; /* Primary color for button */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d4f56; /* Darker shade on hover */
+}
+

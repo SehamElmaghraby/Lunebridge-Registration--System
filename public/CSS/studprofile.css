@@ -1,0 +1,70 @@
+:root{
+    --navcolor:#196870;
+    --maincolor:#FFF8F5;
+}
+::selection{
+    background-color: var(--navcolor);
+    color: var(--maincolor);
+}
+
+#navbarSupportedContent .active{
+    color:var(--maincolor);
+    font-weight:bold;
+    content: "";
+}  
+#navbarSupportedContent :hover{
+    color:var(--maincolor);
+    font-weight:bold;
+    content: "";
+} 
+#navbarSupportedContent .active {
+    color: var(--maincolor);
+    font-weight: bold;
+    position: relative; /* Needed for positioning the pseudo-element */
+}
+
+#navbarSupportedContent .active::before {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background-color: var(--maincolor); /* Add background for visibility */
+    position: absolute; /* Position relative to parent */
+    top: 30px; /* Adjust as needed */
+    left: 19; /* Adjust as needed */
+
+}
+
+
+.nav-link{
+    color:var(--maincolor);
+}
+nav{
+    box-shadow: 0px 0px 20px 3px rgba(65, 65, 65, 0.537);
+    background-color: var(--navcolor);
+}
+ .nav-header  {
+    text-decoration: none;
+    color: var(--maincolor) !important;
+}
+ section{
+    background-color: var(--maincolor);
+}
+ 
+.student-data, th{
+    color: var(--navcolor) !important;
+}
+.btn{
+    background-color: var(--navcolor);
+    transition: all 0.5s; 
+    color: var(--maincolor); 
+   }
+   .btn:hover{
+       background-color: #0c3c41; 
+       color: var(--maincolor); 
+      }
+
+/*.my-table{
+    background-color: var(--navcolor) !important;
+
+} */
+

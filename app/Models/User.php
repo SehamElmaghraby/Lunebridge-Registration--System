@@ -23,7 +23,9 @@ class User extends Authenticatable
         'email',
         'student_id',
         'password',
-        'year_of_birth',
+        'year_of_enrollment',
+        'gpa',
+        'is_admin',
     ];
 
 //     public function student()
@@ -35,6 +37,7 @@ public function courses()
 {
     return $this->belongsToMany(Course::class, 'courses_user','user_id', 'course_id');
 }
+
 
     /**
      * The attributes that should be hidden for serialization.

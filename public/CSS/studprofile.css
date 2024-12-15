@@ -31,9 +31,7 @@
     position: absolute; /* Position relative to parent */
     top: 30px; /* Adjust as needed */
     left: 19; /* Adjust as needed */
-
 }
-
 
 .nav-link{
     color:var(--maincolor);

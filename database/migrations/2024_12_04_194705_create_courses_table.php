@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('course_name')->unique(); // Ensure course names are unique
-
-            // Course code (optional, but unique)
             $table->string('course_code')->unique(); // Unique course code
             // $table->string('pre-requisites');
             $table->timestamps();

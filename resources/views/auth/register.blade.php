@@ -41,8 +41,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="year_of_birth" class="form-label">Year of Birth</label>
-            <input type="number" name="year_of_birth" id="year_of_birth" class="form-control" required>
+            <label for="year_of_enrollment" class="form-label">Year of enrollment</label>
+            <input type="number" name="year_of_enrollment" id="year_of_enrollment" class="form-control" required>
         </div>
 
         <!-- Password -->

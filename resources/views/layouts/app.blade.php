@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/CustomLogin.css') }}">
         <title>Student Registration System</title>
-        <link rel="icon" type="image/png" sizes="" href="{{asset('Imgs/Graduation cap logo design,hat logo design (2).png')}}">
+        <link rel="icon" type="image/png" sizes="" href="{{asset('Image/cap.png')}}">
         <!-- Bootstrap CSS -->
         {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"> --}}
         <title>{{ config('app.name', 'Student Registration System') }}</title>

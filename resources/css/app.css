@@ -10,7 +10,6 @@ form {
     margin: auto; /* Center the form */
 }
 
-
     input {
         width: 50%; /* Reduce the width to make inputs smaller */
         margin: 0 auto; /* Center the inputs */
@@ -18,8 +17,6 @@ form {
         border: 1px solid #ccc; /* Optional: Add border */
         border-radius: 5px; /* Rounded corners */
     }
-
-
 
 button {
     background-color: #196870; /* Primary color for button */

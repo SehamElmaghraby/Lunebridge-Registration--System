@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->decimal('gpa', 3, 2)->default(0.0)->change();
-            $table->integer('year_of_birth')->default(2000);
+            $table->decimal('gpa', 3, 2)->default(null)->nullable();
+            $table->integer('year_of_enrollment')->default(2000);
             $table->rememberToken();
             $table->timestamps();
         });

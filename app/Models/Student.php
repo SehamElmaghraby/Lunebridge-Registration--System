@@ -23,7 +23,7 @@ class Student extends Authenticatable
 
     public function courses()
    {
-    return $this->belongsToMany(Course::class, 'course_student')
+    return $this->belongsToMany(Course::class, 'courses_user')
        ->withTimestamps();
     }
 }

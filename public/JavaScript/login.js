@@ -33,14 +33,7 @@ signUpForm.addEventListener("submit", function (e) {
     else if(!passwordBool){
         paragraph.innerHTML=` <p class="text-center text-danger">password is invalid</p>`;
     }
-
-
 })
-
-
-
-
-
 
 function checkInput(input, condition) {
     if (condition) {

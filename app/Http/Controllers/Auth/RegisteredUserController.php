@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
         'student_id' => ['required', 'integer', 'exists:students,student_id'], // Ensure student_id exists in the students table
         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users'], // Ensure email is unique in the users table
         'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        'year_of_birth' => 'required|integer|between:2000,' . date('Y'), // Validate year_of_birth
+        'year_of_enrollment' => 'required|integer|between:2000,' . date('Y'), // Validate year_of_birth
         'gpa' => 'nullable|numeric|between:0,4.0', // GPA is optional
         'student_id.exists' => 'Invalid ID number. Please provide a valid student ID.',
     ]);
@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
         'last_name' => $validated['last_name'],
         'email' => $validated['email'], // Store email in the users table
         'student_id' => $validated['student_id'], // Store student_id in the users table
-        'year_of_birth' => $validated['year_of_birth'],
+        'year_of_enrollment' => $validated['year_of_enrollment'],
         'gpa' => $validated['gpa'] ?? null, // GPA is optional, so handle accordingly
         'password' => Hash::make($validated['password']), // Hash the password
     ]);

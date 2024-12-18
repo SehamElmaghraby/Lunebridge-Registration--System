@@ -72,6 +72,8 @@ return [
         'admins' => [ // New provider for admins
         'driver' => 'eloquent',
         'model' => App\Models\User::class,
+        'query' => function ($query) {
+            return $query->where('is_admin', true);} // Ensure that only admins are fetched
     ],
 
         // 'users' => [

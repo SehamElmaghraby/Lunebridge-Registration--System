@@ -76,11 +76,11 @@
 
 <x-guest-layout>
 
-    <x-slot name="title">Student Registration System</x-slot>
+    <x-slot name="title">Lunebridge</x-slot>
     <!-- Navbar -->
     <nav class="navbar fixed-top" style="background-color: #196870; box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.537);">
         <div class="container py-3 d-flex justify-content-between align-items-center">
-            <h3 style="color: #fff;">college name</h3>
+            <h3 style="color: #fff;">LUNEBRIDGE</h3>
             <span style="color: #fff;"><i class="fa-solid fa-building-columns fa-2x"></i></span>
         </div>
     </nav>
@@ -167,14 +167,10 @@
     <!-- Footer -->
     <footer class="py-2" style="background-color: #196870; color: #fff;">
         <div class="container text-center">
-            <p>© Copyright College Name.<br>All Rights Reserved Designed by BootstrapMade</p>
+            <p>© Copyright Lunebridge University.<br>All Rights Reserved to Lunebridge University</p>
         </div>
     </footer>
 </x-guest-layout>
-
-
-
-
 
 
 

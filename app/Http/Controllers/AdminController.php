@@ -13,13 +13,22 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $students = Student::all();
+        $courses = Course::all();
+        return view('admin-dashboard',[
+            'students'=>$students,
+            'courses' => $courses
+
+        ]);
     }
     // Manage Students
     public function indexStudents()
     {
-        $students = Student::all();
-        return view('admin.students.index', compact('students'));
+        // $students = Student::all();
+
+        return view('admin-students.index',[
+            'students'=>$students
+        ]);
     }
 
     public function storeStudent(Request $request)
@@ -31,7 +40,8 @@ class AdminController extends Controller
         ]);
 
         Student::create($request->only('student_id', 'first_name', 'last_name'));
-        return redirect()->route('admin.students.index')->with('success', 'Student added successfully!');
+        // return redirect()->route('admin-students.index')->with('success', 'Student added successfully!');
+        return redirect()->route('admin-dashboard')->with('success', 'Student added successfully!');
     }
 
     public function deleteStudent($id)
@@ -44,14 +54,14 @@ class AdminController extends Controller
         // Delete the student
         $student->delete();
 
-        return redirect()->route('admin.students.index')->with('success', 'Student deleted successfully!');
+        return redirect()->route('admin-dashboard')->with('success', 'Student deleted successfully!');
     }
 
     // Manage Courses
     public function indexCourses()
     {
         $courses = Course::all();
-        return view('admin.courses.index', compact('courses'));
+        return view('admin-courses.index', compact('courses'));
     }
 
     public function storeCourse(Request $request)
@@ -67,7 +77,7 @@ class AdminController extends Controller
             'course_code' => $request->course_code,
             'course_name' => $request->course_name,
         ]);
-        return redirect()->route('admin.courses.index')->with('success', 'Course added successfully!');
+        return redirect()->route('admin-dashboard')->with('success', 'Course added successfully!');
     }
 
     public function deleteCourse($id)
@@ -80,6 +90,6 @@ class AdminController extends Controller
         // Delete the course
         $course->delete();
 
-        return redirect()->route('admin.courses.index')->with('success', 'Course deleted successfully!');
+        return redirect()->route('admin-dashboard')->with('success', 'Course deleted successfully!');
     }
 }

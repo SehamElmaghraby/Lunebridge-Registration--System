@@ -27,6 +27,15 @@ section{
 h3{
     font-family: "Roboto", sans-serif !important;
     color: var(--maincolor);
+
+}
+h1:hover{
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    transform: skewY(2deg) scale(1);
+
+}
+h1{
+    transition: all 0.5s;
 }
 .slide-in {
     position: relative;
@@ -37,22 +46,46 @@ a, .nav-icon{
 }
 .btn{
     background-color: var(--navcolor);
-    transition: all 0.5s;
+    transition: all 0.5s ;
     color: var(--maincolor);
    }
    .btn:hover{
        background-color: #0c3c41;
+       transform: translateY(-2.5px);
       }
       h1,h2,h3,h4,h5,p,h6{
        color: var(--maincolor);
       }
+      .btn:active{
+        box-shadow: 0 2px #0c3c41;
+        transform: translateY(-2px);
+      }
  footer {
-    background-color: var(--maincolor);
-    color: #10565e;
+
+    background-color: var(--navcolor);
+    color: var(--maincolor);
    }
-   footer p{
+   #boxy:hover {
+    animation: shake 0.5s infinite;
+    background-color: var(--navcolor);
+    transform: translateY(-2.5px);
+  }
+
+  @keyframes shake {
+    0% { transform: translate(0, 0px); }
+    25% { transform: translate(-5px, -5px); }
+    50% { transform: translate(0px, -0px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(0px, 0px); }
+  }
+   #boxy{
+    transition: all 0.5s;
+    background-color: #28858f;
+   }
+
+   /* footer p{
     color: var(--navcolor);
-   }
+   } */
 
 @keyframes slideIn {
     from {

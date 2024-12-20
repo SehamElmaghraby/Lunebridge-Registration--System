@@ -16,8 +16,14 @@
 
 <body data-bs-spy="scroll" data-bs-target="#navId">
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container py-3">
-            <a class=" nav-header fw-bolder" style="font-size: 1.5rem;" href="#">LUNEBRIDGE</a>
+        <div class="container py-1">
+            <img src="{{ asset('Image/lunebridge Logo.png') }}"
+                     alt="LUNEBRIDGE Logo"
+                     style="height: 70px; margin-right: 10px;">
+                <span class="text-white fw-bold" style="font-size: 1.8rem;">LUNEBRIDGE</span>
+
+
+            {{-- <a class=" nav-header fw-bolder" style="font-size: 1.5rem;" href="#">LUNEBRIDGE</a> --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +40,7 @@
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST" class="d-inline">
                             @csrf
-                            <button type="submit" class="btn btn-danger">Logout</button>
+                            <button type="submit" class="btn ">Logout</button>
                         </form>
                     </li>
                     @endauth
@@ -43,34 +49,27 @@
         </div>
     </nav>
 
-    <section class="vh-100 d-flex justify-content-center align-items-center" id="Home">
+    <section class="min-vh-100  d-flex justify-content-center align-items-center" id="Home">
         <div class="container">
-            @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
 
-@if(session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
             <div class="student-data mb-1">
                 <div class="row text-center gy-4 ">
                     <div class="col-md-3">
-                        <span  style="font-size: 1.5rem"><span style="font-size: 1.5rem" class="fw-bolder">Student Name:</span> {{ $user->first_name}} {{ $user->last_name}}</span>
+                        <h5 class="fw-bolder" style="font-size: 1.5rem">Student Name:</h5> <h6> {{ $user->first_name}} {{ $user->last_name}}</h6>
                     </div>
 
                     <div class="col-md-3">
-                        <span  style="font-size: 1.5rem"><span  style="font-size: 1.5rem" class="fw-bolder">College Name:</span>Computer Science</span>
+                        <h5 class="fw-bolder" style="font-size: 1.5rem">Faculty of:</h5><h6> Computer Science</h6>
                     </div>
                     <div class="col-md-3">
-                        <span  style="font-size: 1.5rem"><span  style="font-size: 1.5rem" class="fw-bolder">Student ID:</span> {{ $user->student_id }}</span>
+                        <h5 class="fw-bolder" style="font-size: 1.5rem">Student ID:</h5> <h6>{{ $user->student_id }}</h6>
                     </div>
 
+                    {{-- <div class="col-md-3">
+                        <h5  class="fw-bolder" style="font-size: 1.5rem">Enrollment Year:</h5><h6>{{ $user->year_of_enrollment }}</h6>
+                    </div> --}}
                     <div class="col-md-3">
-                        <span  style="font-size: 1.5rem"><span  style="font-size: 1.5rem" class="fw-bolder">Enrollment Year:</span> {{ $user->year_of_enrollment }}</span>
+                        <h5 class="fw-bolder" style="font-size: 1.5rem">GPA:</h5><h6>3.45</h6>
                     </div>
                 </div>
             </div>
@@ -96,21 +95,36 @@
                                         @csrf
                                         @method('DELETE')
                                         <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                        <button type="submit" class="btn btn-danger">Drop</button>
+                                        <button type="submit" class="btn ">Drop</button>
                                     </form>
                                 </td>
                         @endforeach
                     </tbody>
                 </table>
+                @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             </div>
         </div>
+
     </section>
 
-    <section class="vh-100 d-flex justify-content-center align-items-center" id="courses">
+    <section class="min-vh-100 d-flex justify-content-center align-items-center" id="courses">
         <div class="container">
             <div class="student-data mb-1">
                 <div class="row text-center gy-4 ">
-                    <div class="col-md-3">
+                    <div>
+                        <h3>Available Courses</h3>
+                    </div>
+                    {{-- <div class="col-md-3">
                         <span><span class="fw-bolder">Student Name:</span> {{ $user->first_name }}</span>
                     </div>
                     <div class="col-md-3">
@@ -121,7 +135,7 @@
                     </div>
                     <div class="col-md-3">
                         <span><span class="fw-bolder">Year:</span> {{ $user->year_of_enrollment }}</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

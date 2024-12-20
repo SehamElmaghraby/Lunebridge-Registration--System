@@ -23,19 +23,18 @@ class User extends Authenticatable
         'email',
         'student_id',
         'password',
-        'year_of_enrollment',
         'gpa',
         'is_admin',
     ];
 
-//     public function student()
-// {
-//     return $this->belongsTo(Student::class, 'student_id', 'student_id');
-// }
 
 public function courses()
 {
     return $this->belongsToMany(Course::class, 'courses_user','user_id', 'course_id');
+}
+public function student()
+{
+    return $this->belongsToMany(Student::class, 'users_student','user_id', 'student_id');
 }
 
 

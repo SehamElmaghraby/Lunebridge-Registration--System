@@ -79,9 +79,11 @@
     <x-slot name="title">Lunebridge</x-slot>
     <!-- Navbar -->
     <nav class="navbar fixed-top" style="background-color: #196870; box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.537);">
-        <div class="container py-3 d-flex justify-content-between align-items-center">
-            <h3 style="color: #fff;">LUNEBRIDGE</h3>
-            <span style="color: #fff;"><i class="fa-solid fa-building-columns fa-2x"></i></span>
+        <div class="container py-1 ">
+                <img  src="{{ asset('Image/lunebridge Logo.png') }}"
+            alt="LUNEBRIDGE Logo"
+            style="height: 70px; margin-right: 10px;">
+       <span class="me-auto text-white fw-bold" style="font-size: 1.8rem;">LUNEBRIDGE</span>
         </div>
     </nav>
 
@@ -92,7 +94,7 @@
                 <!-- Image Section -->
                 <div class="col-md-6 d-flex justify-content-center">
                     <figure style="box-shadow: 0px 0px 10px -1px #d4c6c0; border-radius: 10px; overflow: hidden;">
-                        <img src="https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        <img class='photo' src="https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                              class="img-fluid w-100" alt="Login Image">
                     </figure>
                 </div>

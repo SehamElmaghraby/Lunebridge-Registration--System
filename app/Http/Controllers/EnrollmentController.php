@@ -22,6 +22,13 @@ class EnrollmentController extends Controller
         // Get the currently authenticated student
         $user = auth()->user(); // assuming you're using the `users` table for authentication
 
+        // Check if the student is already enrolled in the course
+        $alreadyEnrolled = $user->courses()->where('course_id', $request->course_id)->exists();
+
+        if ($alreadyEnrolled) {
+            // Redirect back with an error message
+            return redirect()->back()->with('error', 'You are already enrolled in this course.');
+        }
 
         // Enroll the student in the course
         $user->courses()->attach($request->course_id);
@@ -39,8 +46,6 @@ class EnrollmentController extends Controller
 }
 
 
-
-
      public function dropCourse(Request $request)
    {
     $request->validate([
@@ -56,28 +61,6 @@ class EnrollmentController extends Controller
     return redirect()->back()->with('success', 'Course dropped successfully!');
    }
 
-
-// public function dropCourse(Request $request)
-// {
-//     // Validate the course ID exists in the request
-//     $request->validate([
-//         'course_id' => 'required|exists:courses,id',
-//     ]);
-
-//     // Get the authenticated user
-//     $user = auth()->user();
-
-//     // Check if the user is already enrolled in the course
-//     if (!$user->courses()->where('course_id', $request->course_id)->exists()) {
-//         return redirect()->back()->with('error', 'You are not enrolled in this course.');
-//     }
-
-//     // Detach the course (drop the course)
-//     $user->courses()->detach($request->course_id);
-
-//     // Return a success message and redirect
-//     return redirect()->back()->with('success', 'Course dropped successfully!');
-// }
 
 
 //    public function academicRecord()

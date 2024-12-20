@@ -16,8 +16,13 @@
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container py-3">
-            <a class="nav-header fw-bolder" style="font-size: 1.5rem;" href="#">LUNEBRIDGE</a>
+        <div class="container py-1">
+
+            <img src="{{ asset('Image/lunebridge Logo.png') }}"
+            alt="LUNEBRIDGE Logo"
+            style="height: 70px; margin-right: 10px;">
+       <span class="text-white fw-bold" style="font-size: 1.8rem;">LUNEBRIDGE</span>
+            {{-- <a class="nav-header fw-bolder" style="font-size: 1.5rem;" href="#">LUNEBRIDGE</a> --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,7 +38,7 @@
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST" class="d-inline">
                             @csrf
-                            <button type="submit" class="btn btn-danger">Logout</button>
+                            <button type="submit" class="btn ">Logout</button>
                         </form>
                     </li>
                     @endauth
@@ -42,25 +47,39 @@
         </div>
     </nav>
 
+    {{-- <div class="student-data mb-1">
+        <div class="row text-center gy-4 ">
+            <div class="col-md-3">
+                <span  style="font-size: 1.5rem"><span style="font-size: 1.5rem" class="fw-bolder"> Name:</span> {{ $user->first_name}} {{ $user->last_name}}</span>
+            </div>
+
+            <div class="col-md-3">
+                <span  style="font-size: 1.5rem"><span  style="font-size: 1.5rem" class="fw-bolder">College Name:</span>Computer Science</span>
+            </div>
+
+        </div>
+    </div> --}}
+    <!-- Admin Information Section -->
+    {{-- <section class="mt-5 pt-5">
+        <div class="container text-center">
+            <h3>Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h3>
+            <h5>College: Computer Science</h5>
+        </div>
+    </section> --}}
 
 <section class="vh-100 d-flex justify-content-center align-items-center" id="add-course">
     <div class="container">
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
 
-        @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="row text-center gy-4 ">
+            <div class="col-md-6">
+                <h2 style="color: #196870" class="text-center mb-4">Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h2>
+            </div>
+            <div class="col-md-6">
+                <h2 style="color: #196870" class="text-center mb-4">Faculty of: Computer Science</h2>
+            </div>
         </div>
-        @endif
-        <h3 class="text-center mb-4">Add New Course</h3>
+
+        <h4 class="text-center mb-4" style="color: #196870">Add New Course</h4>
         <form action="{{ route('admin-courses.store') }}" method="POST">
             @csrf
             <div class="row g-3">
@@ -70,9 +89,12 @@
                 <div class="col-md-6">
                     <input type="text" name="course_name" class="form-control" placeholder="Course Name" required>
                 </div>
+                <div class="col-md-6">
+                    <input type="text" name="credit_hours" class="form-control" placeholder="Credit Hours" required>
+                </div>
             </div>
             <div class="mt-3 text-center">
-                <button type="submit" class="btn btn-primary">Add Course</button>
+                <button type="submit"  class="btn ">Add Course</button>
             </div>
         </form>
 
@@ -81,14 +103,30 @@
 
 <section class="vh-100 d-flex justify-content-center align-items-center" id="courses">
     <div class="container">
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+
+        @if($errors->any())
+        <div class="alert ">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="enrolled-courses pt-5">
-            <h3 class="text-center mb-4">Courses List</h3>
+            <h3 class="text-center mb-4" style="color: #196870">Courses List</h3>
             <table class="table text-center table-responsive">
                 <thead>
                     <tr>
                         <th>Index</th>
                         <th>Course Name</th>
                         <th>Course Code</th>
+                        <th>Credit Hours</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -98,11 +136,13 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $course->course_name }}</td>
                             <td>{{ $course->course_code }}</td>
+                            <td>{{ $course->credit_hours }}</td>
+
                             <td>
                                 <form action="{{ route('admin-courses.delete', $course->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this course?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn ">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -115,7 +155,7 @@
 <section class="vh-100 d-flex justify-content-center align-items-center" id="add-student">
     <div class="container">
 
-        <h3 class="text-center mb-4">Add New Student</h3>
+        <h4 class="text-center mb-4" style="color: #196870">Add New Student</h4>
         <form action="{{ route('admin-students.store') }}" method="POST">
             @csrf
             <div class="row g-3">
@@ -130,7 +170,7 @@
                 </div>
             </div>
             <div class="mt-3 text-center">
-                <button type="submit" class="btn btn-primary">Add Student</button>
+                <button type="submit" class="btn ">Add Student</button>
             </div>
         </form>
     </div>
@@ -161,7 +201,7 @@
                                     <form action="{{ route('admin-students.delete', $student->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this student?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn ">Delete</button>
                                     </form>
                                 </td>
                             </tr>

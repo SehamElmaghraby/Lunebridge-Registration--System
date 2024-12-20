@@ -20,10 +20,13 @@ class Student extends Authenticatable
     ];
 
 
-
     public function courses()
    {
     return $this->belongsToMany(Course::class, 'courses_user')
        ->withTimestamps();
     }
+    public function user()
+{
+    return $this->belongsToMany(User::class, 'users_student','student_id', 'user_id');
+}
 }

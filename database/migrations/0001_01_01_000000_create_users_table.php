@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->decimal('gpa', 3, 2)->default(null)->nullable();
-            $table->integer('year_of_enrollment')->default(2000);
             $table->rememberToken();
             $table->timestamps();
         });

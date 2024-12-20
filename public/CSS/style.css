@@ -1,5 +1,7 @@
 
-
+html {
+    scroll-padding: 94px;
+ }
 :root{
     --navcolor:#196870;
     --maincolor:#FFF8F5;
@@ -15,6 +17,19 @@
 nav{
     box-shadow: 0px 0px 20px 3px rgba(65, 65, 65, 0.537);
     background-color: var(--navcolor);
+}
+#navbarSupportedContent .active{
+    color:var(--maincolor);
+    font-weight:bold;
+    content: "";
+}
+
+
+
+
+
+.nav-link{
+    color:var(--maincolor) !important;
 }
 section{
     background-image: url("/image/welcomebg.jpg");

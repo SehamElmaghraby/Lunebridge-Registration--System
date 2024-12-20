@@ -31,19 +31,5 @@ class StudentEnrollmentController extends Controller
 
     }
 
-    public function show()
-    {
-        // Fetch all courses
-        // $allCourses = Course::all();
 
-        // Fetch enrolled courses for the authenticated user
-        // $enrolledCourses = auth()->user()->courses;
-
-
-        // Pass data to the Blade file
-        // return view('student-profile', [
-        //     'allCourses' => $allCourses,
-        //     'enrolledCourses' => $enrolledCourses
-        // ]);
-    }
 }

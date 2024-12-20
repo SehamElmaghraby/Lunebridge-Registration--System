@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('users_student', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key to 'students'
-            $table->foreignId('course_id')->constrained()->onDelete('cascade'); // Foreign key to 'courses'
-            $table->unique(['user_id', 'course_id']);
+            $table->foreignId('student_id')->constrained()->onDelete('cascade'); // Foreign key to 'courses'
+            $table->unique(['user_id', 'student_id']);
 
             $table->timestamps();
         });

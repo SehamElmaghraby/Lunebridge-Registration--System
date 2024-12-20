@@ -49,7 +49,7 @@ class AdminController extends Controller
         $student = Student::findOrFail($id);
 
         // Delete enrollments
-        $student->courses()->detach();
+        // $student->user()->detach();
 
         // Delete the student
         $student->delete();
@@ -70,12 +70,14 @@ class AdminController extends Controller
             'course_code' => 'required|unique:courses,course_code',
             'course_name' => 'required|unique:courses,course_name',
             // 'description' => 'nullable|string',
+            'credit_hours' => 'required|integer|between:0,4',
         ]);
 
         // Course::create($request->only('course_name', 'course_code'));
         Course::create([
             'course_code' => $request->course_code,
             'course_name' => $request->course_name,
+            'credit_hours'=>$request->credit_hours,
         ]);
         return redirect()->route('admin-dashboard')->with('success', 'Course added successfully!');
     }

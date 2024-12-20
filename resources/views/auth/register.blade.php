@@ -20,9 +20,12 @@
 
 <body>
     <nav class="fixed-top">
-        <div class="container py-3 d-flex justify-content-between align-items-center">
-            <div class="nav-text">
-                <h3>LUNEBRIDGE</h3>
+        <div class="container py-2 d-flex justify-content-between align-items-center">
+            <div class="nav-text d-flex align-items-center">
+                <img src="{{ asset('Image/lunebridge Logo.png') }}"
+                     alt="LUNEBRIDGE Logo"
+                     style="height: 70px; margin-right: 10px;">
+                <span class="text-white fw-bold" style="font-size: 1.8rem;">LUNEBRIDGE</span>
             </div>
             <div class="nav-icon">
                 <span><i class="fa-solid fa-building-columns fa-2x"></i></span>

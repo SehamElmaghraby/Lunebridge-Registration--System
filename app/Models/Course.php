@@ -10,15 +10,8 @@ class Course extends Model
 
     use HasFactory;
 
-    protected $fillable = ['course_name', 'course_code'];
+    protected $fillable = ['course_name', 'course_code','credit_hours'];
 
-    // Define the relationship with students (many-to-many)
-    // public function students()
-    // {
-
-    //     return $this->belongsToMany(User::class, 'course_user')
-    //             ->withTimestamps();
-    // }
 
     public function users()
 {
@@ -29,7 +22,4 @@ public function students()
 {
     return $this->belongsToMany(User::class, 'courses_user', 'course_id', 'user_id');
 }
-
-
-
 }

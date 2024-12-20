@@ -19,23 +19,29 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="fixed-top">
-        <div class="container py-3 d-flex justify-content-between align-items-center">
-            {{-- <img src="{{ asset('Image/lunebridge Logo.png') }}" alt="LUNEBRIDGE Logo"
-            style="height: 70px;">
-            <h3 >LUNEBRIDGE UNI</h3>
-            <div class="nav-text">
-
-            </div> --}}
-
-            <div class="d-flex align-items-center">
-                <img src="{{ asset('Image/lunebridge Logo.png') }}"
-                     alt="LUNEBRIDGE Logo"
-                     style="height: 70px; margin-right: 10px;">
-                <span class="text-white fw-bold" style="font-size: 1.8rem;">LUNEBRIDGE</span>
-            </div>
-            <div class="nav-icon">
-                <span><i class="fa-solid fa-building-columns fa-2x"></i></span>
+    <nav class="navbar navbar-expand-lg d-flex justify-content-center align-items-center fixed-top">
+        <div class="container py-1">
+            <img src="{{ asset('Image/lunebridge Logo.png') }}"
+            alt="LUNEBRIDGE Logo"
+            style="height: 70px; ">
+       <span class="text-white fw-bold me-auto" style="font-size: 1.8rem;">LUNEBRIDGE</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bolder " style="font-size: 1.1rem;" aria-current="page" href="#ourstory">Our Story</a>
+                    </li>
+                    <!-- <li class="nav-item mx-3">
+                        <a class="nav-link fw-semibold " href="#">enrolled courses</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder " style="font-size: 1.1rem;" href="#contact"> Contact Us</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -63,7 +69,7 @@
     <!-- End Home Section -->
 
  <!-- Our Story Section -->
-<article class="py-5 vh-100" id="our-story" style="background-color: #e6e6e6;">
+<article class="py-5 vh-100" id="ourstory" style="background-color: #e6e6e6;">
     <div class="container">
         <div class="text-center mb-4">
             <h2 class="fw-bold" style="font-size: 3rem; color: #2c3e50;">OUR STORY</h2>
@@ -76,7 +82,7 @@
             <div class="col-md-6 mb-0 mb-md-0">
                 <h3 class="fw-bold" style="color: #0c3c41;  font-size: 2rem; line-height:5rem">WHO WE ARE</h3>
                 <p class="lh-base" style="color: #0c3c41; font-size: 1.4rem;">
-                    At Gryffindor College, we inspire innovation and creativity through exceptional learning experiences.
+                    At Lunebridge College, we inspire innovation and creativity through exceptional learning experiences.
                     Since 2005, we have provided students with the knowledge, tools, and confidence to excel academically and professionally.
                 </p>
                 <p class="lh-base" style="color: #0c3c41; font-size: 1.4rem;">
@@ -111,13 +117,13 @@
             <div class="col-md-4 mb-4 me-5">
                 <h4 class="fw-bold mb-3" style="color: #196870; font-size: 2rem;">Our Address</h4>
                 <p style="color: #555; font-size: 1.5rem;">
-                    <i class="fa-solid fa-location-dot me-2"></i> 123 College Street, City, Country
+                    <i class="fa-solid fa-location-dot me-2"></i> 123 Lunebridge Street, City, Country
                 </p>
                 <p style="color: #555; font-size: 1.5rem;">
                     <i class="fa-solid fa-phone me-2"></i> +1 (123) 456-7890
                 </p>
                 <p style="color: #555; font-size: 1.5rem;">
-                    <i class="fa-solid fa-envelope me-2"></i> info@college.edu
+                    <i class="fa-solid fa-envelope me-2"></i> info@Lunebridge.edu
                 </p>
             </div>
 

@@ -20,7 +20,6 @@ class AdminUserSeeder extends Seeder
             'email' => 'admin@example.com',
             'student_id' => null, // Admins may not have a student ID
             'password' => Hash::make('password'), // Use a secure password
-            'year_of_enrollment' => 1980, // Or null if not applicable
             'is_admin' => true, // Mark as admin
         ]);
     }

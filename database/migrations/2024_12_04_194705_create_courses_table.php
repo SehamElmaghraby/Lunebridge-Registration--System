@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('course_name')->unique(); // Ensure course names are unique
             $table->string('course_code')->unique(); // Unique course code
-            // $table->string('pre-requisites');
+            $table->tinyInteger('credit_hours')->unsigned()->nullable();
+
             $table->timestamps();
         });
     }

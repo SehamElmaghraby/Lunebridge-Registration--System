@@ -23,7 +23,7 @@
                 <span class="text-white fw-bold" style="font-size: 1.8rem;">LUNEBRIDGE</span>
 
 
-            {{-- <a class=" nav-header fw-bolder" style="font-size: 1.5rem;" href="#">LUNEBRIDGE</a> --}}
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -52,8 +52,8 @@
     <section class="min-vh-100  d-flex justify-content-center align-items-center" id="Home">
         <div class="container">
 
-            <div class="student-data mb-1">
-                <div class="row text-center gy-4 ">
+            <div class="student-data mb-1 ">
+                <div class="row text-center student-section ">
                     <div class="col-md-3">
                         <h5 class="fw-bolder" style="font-size: 1.5rem">Student Name:</h5> <h6> {{ $user->first_name}} {{ $user->last_name}}</h6>
                     </div>
@@ -65,16 +65,14 @@
                         <h5 class="fw-bolder" style="font-size: 1.5rem">Student ID:</h5> <h6>{{ $user->student_id }}</h6>
                     </div>
 
-                    {{-- <div class="col-md-3">
-                        <h5  class="fw-bolder" style="font-size: 1.5rem">Enrollment Year:</h5><h6>{{ $user->year_of_enrollment }}</h6>
-                    </div> --}}
+
                     <div class="col-md-3">
                         <h5 class="fw-bolder" style="font-size: 1.5rem">GPA:</h5><h6>3.45</h6>
                     </div>
                 </div>
             </div>
 
-            <div class="enrolled-courses pt-5">
+            <div class="enrolled-courses  mt-5">
                 <table class="table text-center table-responsive">
                     <thead>
                         <th>Index</th>
@@ -124,18 +122,7 @@
                     <div>
                         <h3>Available Courses</h3>
                     </div>
-                    {{-- <div class="col-md-3">
-                        <span><span class="fw-bolder">Student Name:</span> {{ $user->first_name }}</span>
-                    </div>
-                    <div class="col-md-3">
-                        <span><span class="fw-bolder">Student ID:</span> {{ $user->student_id }}</span>
-                    </div>
-                    <div class="col-md-3">
-                        <span><span class="fw-bolder">College Name:</span>Computer Science</span>
-                    </div>
-                    <div class="col-md-3">
-                        <span><span class="fw-bolder">Year:</span> {{ $user->year_of_enrollment }}</span>
-                    </div> --}}
+
                 </div>
             </div>
 

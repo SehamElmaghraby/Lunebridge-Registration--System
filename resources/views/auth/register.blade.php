@@ -33,9 +33,6 @@
         </div>
     </nav>
 
-    {{-- <section class="vh-100">
-        Empty section for future use
-    </section> --> --}}
 
     <div id="section-details" class="py-5">
         <div class="container d-flex justify-content-center align-items-center h-100">

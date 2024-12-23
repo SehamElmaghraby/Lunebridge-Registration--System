@@ -22,7 +22,7 @@ class StudentEnrollmentController extends Controller
         $enrolledcourses = $user->courses;
 
         // Return the view with student and courses data
-        // return view('student-profile', compact('user', 'enrolledcourses','allcourses'));
+
         return view('student-profile', [
                  'user'=>$user,
                  'allcourses' => $allcourses,

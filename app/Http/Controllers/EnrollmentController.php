@@ -13,8 +13,7 @@ class EnrollmentController extends Controller
 
     public function enroll(Request $request)
 {
-    // try {
-        // Validate the incoming request
+
         $validated = $request->validate([
             'course_id' => 'required|exists:courses,id',
         ]);
@@ -32,16 +31,8 @@ class EnrollmentController extends Controller
 
         // Enroll the student in the course
         $user->courses()->attach($request->course_id);
-
         // Return a success response
-
         return redirect()->back()->with('success', 'Course added successfully!');
-
-        // } catch (\Exception $e) {
-        // Log the error and return a 500 error with the exception message
-        // Log::error('Enrollment failed: ' . $e->getMessage());
-        // return response()->json(['error' => 'Enrollment failed'], 500);
-    // }
 
 }
 
@@ -60,17 +51,5 @@ class EnrollmentController extends Controller
     // return view('student-profile',['user'=>$user]);
     return redirect()->back()->with('success', 'Course dropped successfully!');
    }
-
-
-
-//    public function academicRecord()
-// {
-//     $user = auth()->user();
-
-//     $courses = $user->courses;
-
-//     return response()->json($courses);
-// }
-
 
 }

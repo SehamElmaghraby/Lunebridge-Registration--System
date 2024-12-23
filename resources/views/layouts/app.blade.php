@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="{{ asset('css/CustomLogin.css') }}">
         <title>Student Registration System</title>
         <link rel="icon" type="image/png" sizes="" href="{{asset('Image/cap.png')}}">
-        <!-- Bootstrap CSS -->
-        {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"> --}}
+
         <title>{{ config('app.name', 'Student Registration System') }}</title>
 
         <!-- Fonts -->
@@ -39,7 +38,6 @@
             </main>
         </div>
 
-        <!-- Bootstrap JS -->
-        {{-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script> --}}
+
     </body>
 </html>

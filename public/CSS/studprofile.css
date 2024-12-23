@@ -11,12 +11,12 @@
     color:var(--maincolor);
     font-weight:bold;
     content: "";
-}  
+}
 #navbarSupportedContent :hover{
     color:var(--maincolor);
     font-weight:bold;
     content: "";
-} 
+}
 #navbarSupportedContent .active {
     color: var(--maincolor);
     font-weight: bold;
@@ -47,18 +47,21 @@ nav{
  section{
     background-color: var(--maincolor);
 }
- 
+.student-section{
+    padding-top: 10rem;
+}
+
 .student-data, th{
     color: var(--navcolor) !important;
 }
 .btn{
     background-color: var(--navcolor);
-    transition: all 0.5s; 
-    color: var(--maincolor); 
+    transition: all 0.5s;
+    color: var(--maincolor);
    }
    .btn:hover{
-       background-color: #0c3c41; 
-       color: var(--maincolor); 
+       background-color: #0c3c41;
+       color: var(--maincolor);
       }
 
 /*.my-table{

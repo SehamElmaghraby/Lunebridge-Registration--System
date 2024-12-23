@@ -19,7 +19,7 @@ class AdminUserSeeder extends Seeder
             'last_name' => 'User',
             'email' => 'admin@example.com',
             'student_id' => null, // Admins may not have a student ID
-            'password' => Hash::make('password'), // Use a secure password
+            'password' => Hash::make('Admin123'), // Use a secure password
             'is_admin' => true, // Mark as admin
         ]);
     }

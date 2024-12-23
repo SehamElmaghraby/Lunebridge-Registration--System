@@ -1,31 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\User;
 use App\Models\Course;
 
-
 class AdminController extends Controller
 {
-
     public function dashboard()
     {
         $students = Student::all();
         $courses = Course::all();
         return view('admin-dashboard',[
             'students'=>$students,
-            'courses' => $courses
-
-        ]);
+            'courses' => $courses  ]);
     }
     // Manage Students
     public function indexStudents()
     {
-        // $students = Student::all();
-
         return view('admin-students.index',[
             'students'=>$students
         ]);
@@ -40,17 +33,17 @@ class AdminController extends Controller
         ]);
 
         Student::create($request->only('student_id', 'first_name', 'last_name'));
-        // return redirect()->route('admin-students.index')->with('success', 'Student added successfully!');
         return redirect()->route('admin-dashboard')->with('success', 'Student added successfully!');
     }
 
     public function deleteStudent($id)
     {
-        $student = Student::findOrFail($id);
-
+        $student = Student::where('student_id', $id)->firstOrFail();
+        $user = User::where('student_id', $id)->first();
         // Delete enrollments
-        // $student->user()->detach();
-
+        if ($user) {
+            $user->delete();
+        }
         // Delete the student
         $student->delete();
 

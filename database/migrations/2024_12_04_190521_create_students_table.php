@@ -16,9 +16,6 @@ return new class extends Migration
             $table->integer('student_id')->unique();
             $table->string('first_name');
             $table->string('last_name');
-            // $table->string('email')->unique();
-            // $table->decimal('gpa', 3, 2)->default(0.0)->change();
-            // $table->integer('year_of_birth')->default(2000);
             $table->timestamps();
         });
     }

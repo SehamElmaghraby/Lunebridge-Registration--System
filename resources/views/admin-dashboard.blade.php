@@ -70,12 +70,12 @@
 <section class="vh-100 d-flex justify-content-center align-items-center" id="add-course">
     <div class="container">
 
-        <div class="row text-center gy-4 ">
-            <div class="col-md-6">
-                <h2 style="color: #196870" class="text-center mb-4">Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h2>
+        <div class="row g-4 ">
+            <div class="">
+                <h2 style="color: #196870" class=" mb-4">Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h2>
             </div>
-            <div class="col-md-6">
-                <h2 style="color: #196870" class="text-center mb-4">Faculty of: Computer Science</h2>
+            <div class="">
+                <h3 style="color: #196870" class=" mb-4">Faculty of: Computer Science</h3>
             </div>
         </div>
 
@@ -83,13 +83,13 @@
         <form action="{{ route('admin-courses.store') }}" method="POST">
             @csrf
             <div class="row g-3">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <input type="text" name="course_code" class="form-control" placeholder="Course Code" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <input type="text" name="course_name" class="form-control" placeholder="Course Name" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <input type="text" name="credit_hours" class="form-control" placeholder="Credit Hours" required>
                 </div>
             </div>
@@ -198,7 +198,7 @@
                                 <td>{{ $student->first_name }} {{ $student->last_name }}</td>
                                 <td>{{ $student->student_id }}</td>
                                 <td>
-                                    <form action="{{ route('admin-students.delete', $student->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this student?');">
+                                    <form action="{{ route('admin-students.delete', $student->student_id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this student?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn ">Delete</button>
@@ -212,7 +212,14 @@
         </div>
     </section>
 
-
+<!-- Add JavaScript to disable the back button -->
+<script>
+    // Prevent going back in history
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
